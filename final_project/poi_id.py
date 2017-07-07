@@ -17,6 +17,26 @@ with open("final_project_dataset_unix.pkl", "rb") as data_file:
     data_dict = pickle.load(data_file)
 
 ### Task 2: Remove outliers
+import matplotlib.pyplot as plt
+"""
+fig1 = plt.figure()
+ax = fig1.add_subplot(111)
+for k in data_dict.keys():
+    v = data_dict.get(k)
+    salary = v.get('salary')
+    bonus = v.get('bonus')
+    ax.scatter( salary, bonus )
+"""
+data_dict.pop('TOTAL', None)
+"""
+fig2 = plt.figure()
+ax2 = fig2.add_subplot(111)
+for k in data_dict.keys():
+    v = data_dict.get(k)
+    salary = v.get('salary') 
+    bonus = v.get('bonus')
+    ax2.scatter( salary, bonus )
+"""    
 ### Task 3: Create new feature(s)
 ### Store to my_dataset for easy export below.
 my_dataset = data_dict
